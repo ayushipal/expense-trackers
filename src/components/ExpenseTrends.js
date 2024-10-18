@@ -1,5 +1,13 @@
 import React from 'react';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Cell } from 'recharts';
+
+const categoryColors = {
+  Food: '#ff69b4',
+  Transport: '#4CAF50',
+  Entertainment: '#2196F3',
+  Utilities: '#FF9800',
+  Others: '#9E9E9E',
+};
 
 const ExpenseTrends = ({ expenses }) => {
   const data = expenses.reduce((acc, expense) => {
@@ -13,13 +21,20 @@ const ExpenseTrends = ({ expenses }) => {
   }, []).sort((a, b) => b.value - a.value);
 
   return (
-    <BarChart width={400} height={400} data={data}>
-      <XAxis dataKey="name" />
-      <YAxis />
-      <CartesianGrid stroke="#ccc" />
-      <Tooltip />
-      <Bar dataKey="value" fill="#8884d8" />
-    </BarChart>
+    <div>
+      <BarChart width={400} height={400} data={data}>
+        <XAxis dataKey="name" />
+        <YAxis />
+        <CartesianGrid stroke="#ccc" />
+        <Tooltip />
+        <Legend />
+        <Bar dataKey="value">
+          {data.map((entry, index) => (
+            <Cell key={index} fill={categoryColors[entry.name] || '#8884d8'} />
+          ))}
+        </Bar>
+      </BarChart>
+    </div>
   );
 };
 

@@ -1,0 +1,17 @@
+/* src/components/ExpenseAnalysis.css */
+.expense-analysis {
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space out children */
+    align-items: flex-start; /* Align items at the start */
+    margin-top: 20px; /* Margin at the top */
+  }
+  
+  .expense-summary,
+  .expense-trends {
+    flex: 1; /* Allow both components to take equal space */
+    margin-right: 20px; /* Space between the two components */
+  }
+  
+  .expense-trends {
+    margin-right: 0; /* Remove right margin for the last component */
+  }

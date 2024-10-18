@@ -18,9 +18,18 @@ const AddIncomeModal = ({ addIncome }) => {
       <Modal isOpen={modalIsOpen} onRequestClose={() => setModalIsOpen(false)}>
         <h2>Add Income</h2>
         <form onSubmit={handleSubmit}>
-          <input type="number" placeholder="Amount" value={amount} onChange={(e) => setAmount(e.target.value)} required />
-          <button type="submit">Add Income</button>
-          <button onClick={() => setModalIsOpen(false)}>Cancel</button>
+          <input 
+            type="number" 
+            placeholder="Amount" 
+            value={amount} 
+            onChange={(e) => setAmount(e.target.value)} 
+            required 
+          />
+          {/* Buttons placed below the input field */}
+          <div style={{ marginTop: '10px' }}>
+            <button type="submit">Add Income</button>
+            <button type="button" onClick={() => setModalIsOpen(false)}>Cancel</button>
+          </div>
         </form>
       </Modal>
     </>

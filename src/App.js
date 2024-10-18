@@ -5,6 +5,7 @@ import AddIncomeModal from './components/AddIncomeModal';
 import ExpenseList from './components/ExpenseList';
 import ExpenseSummary from './components/ExpenseSummary';
 import ExpenseTrends from './components/ExpenseTrends';
+import ExpenseAnalysis from './components/ExpenseAnalysis';
 import './App.css';
 
 const App = () => {
